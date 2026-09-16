@@ -182,7 +182,7 @@ main > section:first-child {
   width: 100%;
 }
 
-.hero-media {
+main > section > .hero-media {
   position: absolute;
   inset: 0;
   z-index: 0;
