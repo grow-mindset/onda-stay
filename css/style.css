@@ -66,7 +66,6 @@ footer {
   padding-left: var(--gutter);
 }
 
-header > *,
 main > section > *,
 footer > * {
   max-width: var(--content-width);
@@ -90,17 +89,22 @@ body > a:first-child:focus {
 }
 
 header {
-  display: flex;
   position: relative;
   z-index: 2;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.header-inner {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   min-height: 5rem;
-  border-bottom: 1px solid var(--color-line);
+  max-width: var(--content-width);
+  margin: 0 auto;
 }
 
-header > a:first-child,
+.header-inner > a:first-child,
 footer > a {
   font-family: var(--font-display);
   font-size: 1.5rem;
@@ -109,7 +113,7 @@ footer > a {
   text-decoration: none;
 }
 
-header button {
+.header-inner button {
   padding: 0.45rem 0;
   border: 0;
   color: var(--color-forest);
@@ -136,7 +140,7 @@ nav a {
   text-decoration: none;
 }
 
-header > a:last-child,
+.header-inner > a:last-child,
 main > section:first-child a,
 form button {
   display: inline-flex;
@@ -153,7 +157,7 @@ form button {
   text-decoration: none;
 }
 
-header > a:last-child {
+.header-inner > a:last-child {
   display: none;
 }
 
@@ -182,6 +186,7 @@ main > section:first-child {
   position: absolute;
   inset: 0;
   z-index: 0;
+  max-width: none;
   margin: 0;
 }
 
@@ -333,6 +338,11 @@ article a,
   background: var(--color-forest);
 }
 
+#brand-story > * {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 #brand-story h2 {
   color: inherit;
 }
@@ -434,11 +444,11 @@ footer p {
 }
 
 @media (min-width: 48rem) {
-  header {
+  .header-inner {
     flex-wrap: nowrap;
   }
 
-  header button {
+  .header-inner button {
     display: none;
   }
 
@@ -452,7 +462,7 @@ footer p {
     margin: 0;
   }
 
-  header > a:last-child {
+  .header-inner > a:last-child {
     display: inline-flex;
   }
 
